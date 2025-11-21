@@ -63,7 +63,15 @@ class Program
         }
     }
 
-    
+  
+
+    static bool EmailEsiste(List<Anagrafica> rubrica, string email, string esclusoCodID = "")
+    {
+        return rubrica.Any(p => p.Email == email && p.CodID != esclusoCodID);
+    }
+
+   
+
     static void InserisciScheda(List<Anagrafica> rubrica, ref int nextID)
     {
         Console.Clear();
@@ -75,14 +83,25 @@ class Program
 
         Console.Write("Nome: ");
         p.Nome = Console.ReadLine();
+
         Console.Write("Cognome: ");
         p.Cognome = Console.ReadLine();
+
         Console.Write("Età: ");
         p.Eta = int.Parse(Console.ReadLine());
+
         Console.Write("Telefono: ");
         p.Telefono = Console.ReadLine();
+
         Console.Write("Email: ");
         p.Email = Console.ReadLine();
+
+        // Controllo unicità email
+        while (EmailEsiste(rubrica, p.Email))
+        {
+            Console.WriteLine("ERRORE: email già presente! Inserisci un'altra email:");
+            p.Email = Console.ReadLine();
+        }
 
         rubrica.Add(p);
         Ordina(rubrica);
@@ -91,7 +110,8 @@ class Program
         Console.ReadKey();
     }
 
-    
+   
+
     static void VisualizzaAnagrafica(List<Anagrafica> rubrica)
     {
         Console.Clear();
@@ -119,7 +139,8 @@ class Program
         Console.ReadKey();
     }
 
-    
+  
+
     static void ModificaScheda(List<Anagrafica> rubrica)
     {
         Console.Clear();
@@ -166,7 +187,15 @@ class Program
 
         Console.Write($"Email ({p.Email}): ");
         tmp = Console.ReadLine();
-        if (tmp != "") p.Email = tmp;
+        if (tmp != "")
+        {
+            while (EmailEsiste(rubrica, tmp, p.CodID))
+            {
+                Console.WriteLine("ERRORE: email già registrata! Inserisci un'altra email:");
+                tmp = Console.ReadLine();
+            }
+            p.Email = tmp;
+        }
 
         rubrica[index] = p;
         Ordina(rubrica);
@@ -175,7 +204,8 @@ class Program
         Console.ReadKey();
     }
 
-    
+  
+
     static void EliminaScheda(List<Anagrafica> rubrica)
     {
         Console.Clear();
@@ -207,6 +237,7 @@ class Program
     }
 
     
+
     static void Ordina(List<Anagrafica> rubrica)
     {
         rubrica.Sort((a, b) => a.Cognome.CompareTo(b.Cognome));

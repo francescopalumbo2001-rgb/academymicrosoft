@@ -12,3 +12,4 @@ C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\refint\Gest
 C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\Gestionale.pdb
 C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\Gestionale.genruntimeconfig.cache
 C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\ref\Gestionale.dll
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\Gestionale.sourcelink.json
