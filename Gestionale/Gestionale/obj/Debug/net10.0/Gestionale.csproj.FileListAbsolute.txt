@@ -1,0 +1,14 @@
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\bin\Debug\net10.0\Gestionale.exe
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\bin\Debug\net10.0\Gestionale.deps.json
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\bin\Debug\net10.0\Gestionale.runtimeconfig.json
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\bin\Debug\net10.0\Gestionale.dll
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\bin\Debug\net10.0\Gestionale.pdb
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\Gestionale.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\Gestionale.AssemblyInfoInputs.cache
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\Gestionale.AssemblyInfo.cs
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\Gestionale.csproj.CoreCompileInputs.cache
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\Gestionale.dll
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\refint\Gestionale.dll
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\Gestionale.pdb
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\Gestionale.genruntimeconfig.cache
+C:\Users\franc\RiderProjects\Gestionale\Gestionale\obj\Debug\net10.0\ref\Gestionale.dll
