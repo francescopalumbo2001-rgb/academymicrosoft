@@ -1,75 +1,99 @@
-﻿namespace RegistroStudenti;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
-public class Studente
+namespace UniversityManagement
 {
-    private string nome;
-    private string cognome;
-    private string matricola;
-    private List<int> voti;
-
-    public Studente(string nome, string cognome, string matricola)
+    public class Studente : IEntita, IComparable<Studente>
     {
-        this.nome = nome;
-        this.cognome = cognome;
-        this.matricola = matricola;
-        voti = new List<int>();
-    }
+        // campi privati
+        private string nome;
+        private string cognome;
+        private string matricola;
+        private List<int> voti;
 
-    public string Nome => nome;
-    public string Cognome => cognome;
-    public string Matricola => matricola;
-
-    public double Media
-    {
-        get
+        // costruttore
+        public Studente(string nome, string cognome, string matricola)
         {
-            if (voti.Count == 0) return 0;
-            int somma = 0;
-            foreach (int v in voti)
-                somma += v;
-
-            return (double)somma / voti.Count;
+            this.nome = nome ?? throw new ArgumentNullException(nameof(nome));
+            this.cognome = cognome ?? throw new ArgumentNullException(nameof(cognome));
+            this.matricola = matricola ?? throw new ArgumentNullException(nameof(matricola));
+            this.voti = new List<int>();
         }
-    }
 
-    public int NumeroVoti => voti.Count;
+        // proprietà di sola lettura
+        public string Nome => nome;
+        public string Cognome => cognome;
+        public string Matricola => matricola;
 
-    public void AggiungiVoto(int voto)
-    {
-        if (voto < 1 || voto > 30)
+        // implementazione IEntita (Id => Matricola)
+        public string Id => Matricola;
+
+        // proprietà calcolate read-only
+        public double Media
         {
-            Console.WriteLine("Voto non valido.");
-            return;
+            get
+            {
+                if (voti.Count == 0) return 0.0;
+                return voti.Average();
+            }
         }
-        voti.Add(voto);
-    }
 
-    public void RimuoviUltimoVoto()
-    {
-        if (voti.Count > 0)
+        public int NumeroVoti => voti.Count;
+
+        // metodi
+        public void AggiungiVoto(int voto)
+        {
+            if (voto < 0 || voto > 30)
+                throw new ArgumentOutOfRangeException(nameof(voto), "Il voto deve essere tra 0 e 30.");
+            voti.Add(voto);
+        }
+
+        public void RimuoviUltimoVoto()
+        {
+            if (voti.Count == 0) throw new InvalidOperationException("Non ci sono voti da rimuovere.");
             voti.RemoveAt(voti.Count - 1);
-        else
-            Console.WriteLine("Non ci sono voti da rimuovere.");
-    }
-
-    public void StampaLibretto()
-    {
-        Console.WriteLine($"Libretto di {Nome} {Cognome}, matricola {Matricola}");
-        if (voti.Count == 0)
-        {
-            Console.WriteLine("Nessun voto registrato.");
-            return;
         }
 
-        Console.Write("Voti: ");
-        foreach (int v in voti)
-            Console.Write(v + " ");
+        public void StampaLibretto()
+        {
+            Console.WriteLine($"Libretto di {Nome} {Cognome} - Matricola: {Matricola}");
+            if (voti.Count == 0)
+            {
+                Console.WriteLine("  Nessun voto registrato.");
+                return;
+            }
 
-        Console.WriteLine($"\nMedia: {Media:F2}");
-    }
+            Console.Write("  Voti: ");
+            Console.WriteLine(string.Join(", ", voti));
+            Console.WriteLine($"  Media: {Media:F2} ({NumeroVoti} voti)");
+        }
 
-    public override string ToString()
-    {
-        return $"{Nome} {Cognome} - Matricola: {Matricola} - Media: {Media:F2}";
+        public override string ToString()
+        {
+            return $"{Cognome} {Nome} - Matricola: {Matricola} - Media: {Media:F2} ({NumeroVoti} voti)";
+        }
+
+        // =========================
+        // IComparable<Studente>
+        // Ordinamento richiesto:
+        // 1) Media (DECRESCENTE)
+        // 2) Cognome (alfabetico)
+        // 3) Nome (alfabetico)
+        // =========================
+        public int CompareTo(Studente other)
+        {
+            if (other == null) return -1; // questo viene prima
+            // media decrescente
+            int cmpMedia = other.Media.CompareTo(this.Media); // other vs this => decrescente
+            if (cmpMedia != 0) return cmpMedia;
+
+            // cognome alfabetico (crescente)
+            int cmpCognome = string.Compare(this.Cognome, other.Cognome, StringComparison.OrdinalIgnoreCase);
+            if (cmpCognome != 0) return cmpCognome;
+
+            // nome alfabetico (crescente)
+            return string.Compare(this.Nome, other.Nome, StringComparison.OrdinalIgnoreCase);
+        }
     }
 }

@@ -1,0 +1,15 @@
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\bin\Debug\net10.0\RegistroStudenti2.exe
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\bin\Debug\net10.0\RegistroStudenti2.deps.json
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\bin\Debug\net10.0\RegistroStudenti2.runtimeconfig.json
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\bin\Debug\net10.0\RegistroStudenti2.dll
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\bin\Debug\net10.0\RegistroStudenti2.pdb
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\obj\Debug\net10.0\RegistroStudenti2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\obj\Debug\net10.0\RegistroStudenti2.AssemblyInfoInputs.cache
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\obj\Debug\net10.0\RegistroStudenti2.AssemblyInfo.cs
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\obj\Debug\net10.0\RegistroStudenti2.csproj.CoreCompileInputs.cache
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\obj\Debug\net10.0\RegistroStudenti2.sourcelink.json
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\obj\Debug\net10.0\RegistroStudenti2.dll
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\obj\Debug\net10.0\refint\RegistroStudenti2.dll
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\obj\Debug\net10.0\RegistroStudenti2.pdb
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\obj\Debug\net10.0\RegistroStudenti2.genruntimeconfig.cache
+C:\Users\franc\RiderProjects\RegistroStudenti2\RegistroStudenti2\obj\Debug\net10.0\ref\RegistroStudenti2.dll
